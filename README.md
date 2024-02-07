@@ -14,10 +14,10 @@ pip install -r requirements.txt
 Run the following command to pre-process the data:
 
 ```angular2
-python prepro/prepro_finetuning_data.py
+python prepro/prepro_pretraining_data.py
 ```
 
-to get the following arrow files:
+to get the following files:
 
 ```angular2
 root:[data]
