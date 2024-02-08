@@ -21,10 +21,11 @@ to get the following files:
 
 ```angular2
 root:[data]
-+--finetune_arrows
-| +--vqa_vqa_rad_train.arrow
-| +--vqa_vqa_rad_val.arrow
-| +--vqa_vqa_rad_test.arrow
++--knowledge
+| +--train2id.txt
+| +--relation2id.txt
+| +--entity2id.txt
+| +--ent_embeddings.ckpt
 
 ```
 
