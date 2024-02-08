@@ -11,7 +11,7 @@ pip install -r requirements.txt
 
 ### Pre-processing
 
-Run the following command to pre-process the data:
+Run the following command to translate knowledge graph to embeddings:
 
 ```angular2
 python prepro/prepro_pretraining_data.py
