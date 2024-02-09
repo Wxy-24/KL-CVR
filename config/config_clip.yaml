@@ -1,0 +1,43 @@
+# distributed training
+nodes: 1
+gpus: 1 # I recommend always assigning 1 GPU to 1 node
+nr: 0 # machine nr. in node (0 -- nodes - 1)
+dataparallel: 1 # Use DataParallel instead of DistributedDataParallel
+workers: 3
+from_files: True
+csv_file: "/gpfsdswork/projects/rech/dvj/uyk23wk/ConVIRT/roco-list.csv"
+root_dir: "/gpfsscratch/rech/dvj/uyk23wk/roco-dataset-master/data/train/radiology/images"
+val_csv_file: "/gpfsdswork/projects/rech/dvj/uyk23wk/ConVIRT/val-roco-list.csv"
+val_root_dir: "/gpfsscratch/rech/dvj/uyk23wk/roco-dataset-master/data/validation/radiology/images"
+log_loss_dir: "/gpfsdswork/projects/rech/dvj/uyk23wk/logs"
+
+# train options
+seed: 42 # sacred handles automatic seeding when passed in the config
+batch_size: 32
+image_size: 224
+start_epoch: 0
+epochs: 100
+pretrain: False
+training_temperature: 15
+
+# model options
+resnet: "clip"
+bert: "/gpfsscratch/rech/dvj/uyk23wk/emilyalsentzer/Bio_ClinicalBERT"
+freeze_layers: [0,1,2,3,4,5,6,7,8,9,10,11]
+projection_dim: 512 # "[...] to project the representation to a 128-dimensional latent space"
+truncation: False
+sampling: True
+
+# loss options
+optimizer: "Adam" # or LARS (experimental)
+weight_decay: 1.0e-6 # "optimized using LARS [...] and weight decay of 10−6"
+temperature: 0.1 # see appendix B.7.: Optimal temperature under different batch sizes
+
+# reload options
+model_path: "/gpfsscratch/rech/dvj/uyk23wk/ROCO/test_CLIP_bis" # set to the directory containing `checkpoint_##.tar`
+epoch_num: 100 # set to checkpoint number
+reload: False
+
+# logistic regression options
+# logistic_batch_size: 256
+# logistic_epochs: 500
