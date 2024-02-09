@@ -23,12 +23,6 @@ OpenKE-PyTorch: the project based on PyTorch, which provides the optimized and s
 
 ## Models
 
-OpenKE (Tensorflow): 
-
-*	RESCAL, HolE
-*  DistMult, ComplEx, Analogy
-*  TransE, TransH, TransR, TransD
-
 OpenKE (PyTorch): 
 
 *	 RESCAL
@@ -83,12 +77,5 @@ python train_transe_FB15K237.py
 
   relation2id.txt: all relations and corresponding ids, one per line. The first line is the number of relations.
 
-* For testing, datasets contain additional two files (totally five files):
-
-  test2id.txt: testing file, the first line is the number of triples for testing. Then the following lines are all in the format ***(e1, e2, rel)*** .
-
-  valid2id.txt: validating file, the first line is the number of triples for validating. Then the following lines are all in the format ***(e1, e2, rel)*** .
-
-  type_constrain.txt: type constraining file, the first line is the number of relations. Then the following lines are type constraints for each relation. For example, the relation with id 1200 has 4 types of head entities, which are 3123, 1034, 58 and 5733. The relation with id 1200 has 4 types of tail entities, which are 12123, 4388, 11087 and 11088. You can get this file through **n-n.py** in folder benchmarks/FB15K
   
 
