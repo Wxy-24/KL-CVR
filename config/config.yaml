@@ -4,14 +4,15 @@ nr: 0 # machine nr. in node (0 -- nodes - 1)
 dataparallel: 0 # Use DataParallel instead of DistributedDataParallel
 workers: 6
 from_files: True
-csv_file: "/home/wxy/Desktop/ROCO-test.csv"
-root_dir: "/home/wxy/work/ROCO/data/train/radiology/images"
-val_csv_file: "/home/wxy/Desktop/xiaoyang/roco_val_MO.csv"
-val_root_dir: "/home/wxy/work/ROCO/data/validation/radiology/images"
-log_loss_dir: "/home/wxy/Desktop/xiaoyang"
+pkl_file: "/home/wxy/checkpoint/img_emb_kg.pkl"  # knowledge embeddings for image nodes
+csv_file: "/gpfsdswork/projects/rech/dvj/uyk23wk/ConVIRT/roco-list.csv"
+root_dir: "/gpfsscratch/rech/dvj/uyk23wk/roco-dataset-master/data/train/radiology/images"
+val_csv_file: "/gpfsdswork/projects/rech/dvj/uyk23wk/ConVIRT/val-roco-list.csv"
+val_root_dir: "/gpfsscratch/rech/dvj/uyk23wk/roco-dataset-master/data/validation/radiology/images"
+log_loss_dir: "/gpfsdswork/projects/rech/dvj/uyk23wk/logs"
 
 # train options
-seed: 42 # sacred handles automatic seeding when passed in the config
+seed: 42 
 batch_size: 2
 image_size: 224
 start_epoch: 0
@@ -22,15 +23,9 @@ criterion: "contrastive"
 track: True
 
 # model options
-resnet: "clip_align@/home/wxy/Download/ViT-B-16.pt"
+vit: "clip_align@ViT-B/16"
 bert: "/home/wxy/Download/biogpt"
-freeze_layers: [0,1,2,3,4,5,6,7,8]
-projection_dim: 1024 # "[...] to project the representation to a 128-dimensional latent space"
-truncation: False
-sampling: False
-avgpool: False
-deactivate: False
-projection: False
+emb: 1
 
 # loss options
 optimizer: "Adam" # or LARS (experimental)
@@ -39,7 +34,7 @@ weight_decay: 1.0e-6 # "optimized using LARS [...] and weight decay of 10−6"
 temperature: 0.1 # see appendix B.7.: Optimal temperature under different batch sizes
 
 # reload options
-model_path: "/home/wxy/Desktop/xiaoyang/checkpoint/ViT-B-16_clip_transE" # set to the directory containing `checkpoint_##.tar`
+model_path: "/home/wxy/xiaoyang/checkpoint/local" # set to the directory containing `checkpoint_##.tar`
 epoch_num: 20 # set to checkpoint number
 reload: False
 
