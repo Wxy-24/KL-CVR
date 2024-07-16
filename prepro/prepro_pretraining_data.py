@@ -183,7 +183,7 @@ def select_image_node(ckpt_name):
         kg_emb[img]=emb[idx].tolist()
 
     fname=ckpt_name.replace(".ckpt",".pkl")
-    with open(f'/gpfsdswork/projects/rech/dvj/uyk23wk/xiaoyang/{fname}', 'wb') as fout:
+    with open(f'knowledge/image_node_embeddings.pkl', 'wb') as fout:
         pickle.dump(kg_emb, fout)
 
 
