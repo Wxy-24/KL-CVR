@@ -37,6 +37,10 @@ Now you can start to fine-tune the model from pulicly available weights[ViT-Base
 python main.py
 ```
 
+### model checkpoint
+
+Our weights are available here [ViT-Base-16]([[https://github.com/thunlp/OpenKE](https://openaipublic.azureedge.net/clip/models/5806e77cd80f8b59890b7e101eabd078d9fb84e6937f9e85e4ecb61988df416f/ViT-B-16.pt](https://drive.google.com/drive/folders/1tavJ3Xsp57ezpmzLOkfhUbTBrAt6frZv?usp=drive_link)))
+
 ## Acknowledgement
 
 The code is based on [OpenKE](https://github.com/thunlp/OpenKE), [CLIP](https://github.com/OpenAI/CLIP).
