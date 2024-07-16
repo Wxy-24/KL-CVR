@@ -4,7 +4,7 @@ nr: 0 # machine nr. in node (0 -- nodes - 1)
 dataparallel: 0 # Use DataParallel instead of DistributedDataParallel
 workers: 6
 from_files: True
-pkl_file: "/home/wxy/checkpoint/img_emb_kg.pkl"  # knowledge embeddings for image nodes
+pkl_file: "/knowledge/image_node_embedding.pkl"  # knowledge embeddings for image nodes
 csv_file: "/gpfsdswork/projects/rech/dvj/uyk23wk/ConVIRT/roco-list.csv"
 root_dir: "/gpfsscratch/rech/dvj/uyk23wk/roco-dataset-master/data/train/radiology/images"
 val_csv_file: "/gpfsdswork/projects/rech/dvj/uyk23wk/ConVIRT/val-roco-list.csv"
