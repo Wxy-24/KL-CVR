@@ -86,7 +86,7 @@ def create_entity_vocab(threshold=5):
             for cui in cuis:
                 entity_vocab.append(cui)
     entity_vocab=list(set(entity_vocab))
-    print('len(entity_vocab)',len(entity_vocab))
+    print('total CUIs in ROCO dataset:',len(entity_vocab))
     
 
     fin = open('knowledge/train_umls_example.txt')
