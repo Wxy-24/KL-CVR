@@ -26,6 +26,7 @@ root:
 | +--relation2id.txt
 | +--entity2id.txt
 | +--ent_embeddings.ckpt
+| +--image_node_embeddings.pkl
 
 ```
 
