@@ -309,7 +309,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     print("args.model_path",args.model_path)
-    with open(f'/home/wxy/下载/checkpoint/img_emb_kg.pkl', 'rb') as f:
+    with open(args.pkl_file, 'rb') as f:
         emb = pickle.load(f)
 
     if not os.path.exists(args.model_path):
