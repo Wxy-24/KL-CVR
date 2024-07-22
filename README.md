@@ -12,7 +12,7 @@ pip install -r requirements.txt
 ### Pre-processing
 First, install OpenKE as shown in the [instruction](https://github.com/Wxy-24/KL-CVR/blob/main/prepro/OpenKE/README.md).
 
-Then merge your dataset knowledge with external knowledge graph.(save as prepro/knowledge/train_umls_example.txt')
+Then merge dataset knowledge with knowledge graph.(save as prepro/knowledge/train_umls_example.txt')
 
 Finally, Run the following command to translate knowledge graph to embeddings:
 
