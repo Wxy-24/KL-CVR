@@ -71,14 +71,6 @@ def create_entity_vocab(threshold=5):
                 cui.append(i)
             return cui
 
-    df_train=pd.read_csv(f'/home/wxy/Desktop/NEW-ROCO-train.csv')
-    df_valid=pd.read_csv(f'/home/wxy/Desktop/NEW-ROCO-valid.csv')
-    cui_list=[]
-    for i in range(len(df_train)):
-        cui_list.append(df_train.iloc[i,2])
-    for i in range(len(df_valid)):
-        cui_list.append(df_valid.iloc[i,2])
-
     entity_vocab=[]
     for x in cui_list:
         cuis=str2list(x)
@@ -160,9 +152,6 @@ def main_roco():
             line = line.strip().split("\t")
             relation2id[line[0]] = int(line[1])
 
-    if not os.path.exists("knowledge/ent_embeddings.ckpt"):
-        train_transe()
-
 def select_image_node(ckpt_name):
     x = nn.Parameter(torch.load(f"knowledge/{ckpt_name}",map_location="cpu")["ent_embeddings.weight"], requires_grad=True)  
     x = x / x.norm(dim=1, keepdim=True)    
@@ -188,7 +177,7 @@ def select_image_node(ckpt_name):
 
 
 if __name__ == '__main__':
-    main_roco()          #generate entity2id.txt/relation2id.txt/train2id.txt
-    train_transe()
-    select_image_node('ent_embeddings.ckpt')
+    main_roco()          # generate entity2id.txt/relation2id.txt/train2id.txt for TransE
+    train_transe()       # Translate all the nodes in KG into embedding. file saved as 'knowledge/ent_embeddings.ckpt'
+    select_image_node('ent_embeddings.ckpt')     #select embeddings for image nodes. file saved as 'knowledge/image_node_embeddings.pkl'
     
