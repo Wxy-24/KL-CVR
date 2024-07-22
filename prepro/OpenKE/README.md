@@ -25,10 +25,8 @@ OpenKE-PyTorch: the project based on PyTorch, which provides the optimized and s
 
 OpenKE (PyTorch): 
 
-*	 RESCAL
 *  DistMult, ComplEx, Analogy
 *  TransE, TransH, TransR, TransD
-*  SimplE
 *	 RotatE
 
 We welcome any issues and requests for model implementation and bug fix.
@@ -60,8 +58,12 @@ cd openke
 ```bash
 bash make.sh
 ```	
-
-```
+4. Quick start (example)
+```bash
+cd ../
+cp examples/train_transe_FB15K237.py ./
+python train_transe_FB15K237.py
+```	
 ## Data
 
 * For training, datasets contain three files:
