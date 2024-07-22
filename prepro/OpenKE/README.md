@@ -56,15 +56,11 @@ git clone -b OpenKE-PyTorch https://github.com/thunlp/OpenKE --depth 1
 cd OpenKE
 cd openke
 ```
-3. Compile C++ files
+3. Compile C++ files => release/Base.so
 ```bash
 bash make.sh
 ```	
-4. Quick Start
-```bash
-cd ../
-cp examples/train_transe_FB15K237.py ./
-python train_transe_FB15K237.py
+
 ```
 ## Data
 
