@@ -160,12 +160,16 @@ def select_image_node(ckpt_name):
     f=open(f'knowledge/entity2id.txt','r')
     p=f.readlines()
     ent2idx,img_node={},[]
+    
+    ########### select image node #############
     for idx,i in enumerate(p):
         if idx!=0:
             ent,num=i.split('\t')[0],i.split('\t')[1]
             ent2idx[ent]=int(num)
-            if len(ent)!=8 and ent[0]!='C':   # select image entity
+            if len(ent)!=8 and ent[0]!='C':   # select image entity by name
                 img_node.append(ent)
+    ###########################################
+    
     kg_emb={}
     for img in img_node:
         idx=ent2idx[img]
