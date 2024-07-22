@@ -38,11 +38,15 @@ Now you can start to fine-tune the model from pulicly available weights pretrain
 python main.py
 ```
 
-### model checkpoint
+### Model checkpoint
 
 We fine-tune our framework on [ROCO](https://github.com/razorx89/roco-dataset). Our weights(ViT-Base-16) are available here [Google drive](https://drive.google.com/drive/folders/1tavJ3Xsp57ezpmzLOkfhUbTBrAt6frZv?usp=drive_link). 
 
-You can find an example of how to use our model in this file: [jupyter notebook](https://github.com/Wxy-24/KL-CVR/blob/main/how_to_load_model.ipynb)
+You can find an example of how to use our model in this file: [Jupyter notebook](https://github.com/Wxy-24/KL-CVR/blob/main/how_to_load_model.ipynb)
+
+### Dataset adaption
+This framework relies on external ontology from knowledge base UMLS.
+To merge knowlegde in your dataset with existing knowledge graphs, make sure each image is paired with a set of UMLS Concept Unique Identifiers (CUIs). [Tutorial](https://github.com/Wxy-24/KL-CVR/blob/main/CUI_mapping.ipynb)
 
 ## Acknowledgement
 
