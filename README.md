@@ -20,7 +20,7 @@ python prepro/prepro_pretraining_data.py
 to get the following files:
 
 ```angular2
-root:
+root[prepro]:
 +--knowledge
 | +--train2id.txt
 | +--relation2id.txt
