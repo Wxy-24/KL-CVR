@@ -1,4 +1,5 @@
 # KL-CVR
+This is the implementation of [ISBI24]:[Integrating expert knowledge with vision-language model to improve medical image retrieval](https://drive.google.com/file/d/1D-KQTavwxLzsGJ_hqKv6-V4Mby4ByFET/view?usp=drive_link)
 
 <img src="img/KLCVR.png">
 ## Requirements
