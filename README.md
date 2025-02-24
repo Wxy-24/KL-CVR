@@ -1,6 +1,7 @@
 # KL-CVR
 
-<img src="img/overview.pdf">
+<embed src="img/overview.pdf" width="500px" />
+
 
 ### Requirements
 
